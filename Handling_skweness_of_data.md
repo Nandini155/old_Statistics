@@ -134,3 +134,140 @@ from scipy.stats import yeojohnson
 data_transformed, lambda_ = yeojohnson(data)
 Conclusion:
 Both transformations aim to improve normality and stabilize variance for better performance in statistical modeling. The key difference is that Box-Cox works only with positive values, while Yeo-Johnson can handle negative and zero values as we
+
+# More Transformations 
+## 1. Log Transformation
+Best for: Right-skewed data (positive skew) with large ranges.
+
+How it works: Takes the natural logarithm of each value, compressing the larger values more than smaller ones.
+
+Limitation: Cannot handle zero or negative values directly (you need to add a constant).
+
+python
+Copy code
+
+import numpy as np
+
+df['log_transformed'] = np.log(df['original_data'] + 1)
+
+## 2. Square Root Transformation
+Best for: Data with moderate skewness (e.g., counts or frequency data).
+
+How it works: Takes the square root of each value, compressing larger values but less aggressively than log transformation.
+
+Limitation: Cannot handle negative values directly.
+
+python
+Copy code
+
+df['sqrt_transformed'] = np.sqrt(df['original_data'])
+
+## 3. Box-Cox Transformation
+Best for: Positive data only. It is useful when you need to find the best transformation automatically.
+
+How it works: Box-Cox transforms data using a parameter 
+𝜆
+λ that maximizes the likelihood of achieving normality.
+
+Limitation: Only works on strictly positive values.
+
+python
+Copy code
+
+from scipy.stats import boxcox
+
+data_transformed, lambda_ = boxcox(df['original_data'] + 1e-8)
+
+## 4. Yeo-Johnson Transformation
+Best for: Data with both positive and negative values.
+
+How it works: A generalized version of Box-Cox that can handle non-positive values. It adjusts the transformation based on the sign of the data.
+
+python
+Copy code
+
+from scipy.stats import yeojohnson
+
+data_transformed, lambda_ = yeojohnson(df['original_data'])
+
+## 5. Power Transformation (Exponential or Reciprocal)
+
+Best for: Various skewed distributions.
+
+How it works: A power transformation (e.g., 
+𝑥
+1
+/
+2
+x 
+1/2
+  or 
+𝑥
+−
+1
+x 
+−1
+ ) modifies the data's scale to reduce skewness.
+
+Limitation: Choice of power depends on the data’s characteristics.
+
+python
+Copy code
+
+df['reciprocal_transformed'] = 1 / df['original_data'] 
+
+## 6. Winsorization
+Best for: Outliers causing extreme skewness.
+
+How it works: Caps the extreme values in the data at a predefined percentile, reducing their impact without removing them.
+
+Limitation: May obscure real data patterns by flattening extreme values.
+
+python
+Copy code
+
+from scipy.stats.mstats import winsorize
+
+df['winsorized'] = winsorize(df['original_data'], limits=[0.05, 0.05])
+
+## 7. Logit Transformation
+Best for: Proportional data bounded between 0 and 1 (e.g., probabilities).
+
+How it works: Transforms the data using the logit function, which is the log-odds transformation.
+
+python
+Copy code
+
+from scipy.special import logit
+
+df['logit_transformed'] = logit(df['proportional_data'])
+
+## 8. Rank-Based Transformation (Quantile Transformation)
+Best for: Handling extreme skewness and outliers.
+
+How it works: Assigns ranks to data points and transforms them to follow a desired distribution (e.g., normal distribution).
+
+python
+Copy code
+
+from sklearn.preprocessing import QuantileTransformer
+
+qt = QuantileTransformer(output_distribution='normal')
+
+df['quantile_transformed'] = qt.fit_transform(df[['original_data']])
+
+## 9. Log-Log Transformation
+Best for: When both the dependent and independent variables are skewed.
+
+How it works: Applies a log transformation to both variables, making relationships linear and reducing skewness. 
+
+## Choosing the Right Transformation
+
+Use log transformation for highly skewed data with large values.
+
+Square root transformation is appropriate for mildly skewed data.
+
+Box-Cox and Yeo-Johnson transformations are suitable when you need data-driven adjustments.
+
+Quantile transformation is ideal when you need to forcefully normalize extreme skewed data.
+
