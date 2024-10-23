@@ -1,0 +1,14 @@
+How to Choose the Significance Level (α)?
+The choice of α depends on how serious the consequences are if you make the wrong decision (like falsely rejecting the null hypothesis, called a Type I error).
+
+Common Choices for α:
+0.05 (5%): A balanced level for many fields, like social sciences or marketing research.
+0.01 (1%): Used when being more cautious, like in medical studies or clinical trials.
+0.10 (10%): Used when you're okay with some uncertainty, like in exploratory research or pilot studies.
+
+Summary
+The significance level (α) isn’t always 0.05—it can change based on the field of study, consequences of error, and type of research.
+0.01 is used for stricter studies (e.g., medical research).
+0.10 is used for exploratory studies (e.g., early marketing tests).
+Multiple tests may require adjusting α to avoid false positives.
+In conclusion, α is flexible and should be chosen based on how much risk you are willing to accept for making an incorrect conclusion.
