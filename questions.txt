@@ -1,0 +1,27 @@
+Understanding Hypothesis Testing:
+Basic Concept:
+
+What is the purpose of a null hypothesis (H₀)?
+Significance Level:
+
+If you set α = 0.01, what is the corresponding confidence level?
+Decision Making:
+
+If your test statistic is -1.5 and the critical value for a two-tailed test is ±2.0, what decision do you make regarding the null hypothesis?
+Critical Values and Decision Boundaries:
+Tail Type:
+
+How does the critical value change if you switch from a two-tailed test to a one-tailed test with the same significance level?
+Adjustment for Multiple Tests:
+
+Why do we sometimes adjust the significance level (α) when performing multiple tests? What is this adjustment called?
+Confidence Intervals:
+Hypothesis Testing and CIs:
+
+If a 95% confidence interval for the difference in means is (-2, 5), can you reject the null hypothesis that the means are equal (difference = 0)?
+Effect of Confidence Level:
+
+What happens to the width of a confidence interval if you increase the confidence level from 95% to 99%? Why?
+Application:
+Real-World Decision:
+Suppose you are testing whether a new teaching method improves student performance. Your t-statistic is 2.5, and the critical value is ±2.0 for a two-tailed test. What is your conclusion?
