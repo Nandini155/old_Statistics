@@ -1,0 +1,18 @@
+The p-value is a way to help you decide if something happened by chance or if it's likely a real effect.
+
+Think of it like this:
+Imagine you flip a coin 10 times, expecting about half heads and half tails (because it's a fair coin).
+But instead, you get 9 heads and 1 tail. Now you're wondering:
+"Is this just luck, or is something strange going on with this coin?"
+This is where the p-value helps. It tells you how unusual your result is.
+
+If the p-value is small (like 0.01 or 1%), it means:
+"Wow, getting this result (9 heads) by chance is really rare! Maybe the coin isn't fair."
+
+If the p-value is big (like 0.5 or 50%), it means:
+"Getting this result isn't that surprising—it could just be luck."
+
+In short:
+Small p-value (< 0.05): Unusual result! Something is probably going on (not just luck).
+Large p-value (> 0.05): Meh, the result is pretty normal. Could easily happen by chance.
+It helps you decide whether to trust your result or dismiss it as random noise.
