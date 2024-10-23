@@ -1,0 +1,47 @@
+How Significance Level, Confidence Interval, and Decision Boundary Work Together
+## Choose the Significance Level (α)
+
+α is the probability of making a Type I error—rejecting the null hypothesis (H₀) when it is actually true. 
+
+Example: α = 0.05 (5%).
+## Determine the Confidence Level (1 − α)
+
+The confidence level is 1 − α.
+
+Example: If α = 0.05, the confidence level is 0.95 (95%).
+
+This means we are 95% confident that the true population parameter lies within the confidence interval.
+
+## Calculate the Confidence Interval (CI)
+
+The CI is a range based on your sample data where the true population parameter is likely to fall, with a confidence level of 95%, for example.
+## Set the Decision Boundary
+
+The decision boundary corresponds to the critical values of the distribution. For example, in a two-tailed test with α = 0.05, the critical values on a standard normal distribution are ±1.96.
+Any test statistic that falls beyond these critical values (outside the CI) will result in rejecting H₀.
+The critical values are the edges of the CI. In our case, the 95% CI lies between the two critical values (±1.96), and the tails contain the α = 0.05 rejection region.
+Now, How Does Hypothesis Testing Work Using the CI and Decision Boundary?
+If the null hypothesis value (or test statistic) falls within the confidence interval:
+
+This means the result is not significant, and we fail to reject H₀ (i.e., we keep the null hypothesis).
+In other words, the parameter lies within the decision boundary.
+If the null hypothesis value (or test statistic) falls outside the confidence interval:
+
+This means the result is statistically significant, and we reject H₀.
+In other words, the parameter lies outside the decision boundary (in the rejection region, beyond the critical value).
+
+
+Correct Interpretation 
+We don’t "accept" the null hypothesis if the test statistic lies within the confidence interval. Instead, we say we "fail to reject" H₀ because we don’t have strong enough evidence to reject it.
+Null hypothesis is only rejected when the value lies outside the confidence interval.
+
+Summary of the Correct Workflow
+Choose α (e.g., 0.05)
+Find the confidence level: 
+1−𝛼 = 0.95
+1−α=0.95 (95% confidence interval).
+
+Set the decision boundary: Use critical values (like ±1.96) to determine the rejection region.
+Evaluate the test statistic:
+Within the CI → Fail to reject H₀ (result is not significant).
+Outside the CI → Reject H₀ (result is significant).
